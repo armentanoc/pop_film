@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popfilm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/img/popcornLogo.png">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+        window.onload = function (){
+            document.querySelector(".menu_mobile").addEventListener("click", function(){
+                if(document.querySelector(".menu nav ul").style.display == 'flex') {
+                    document.querySelector(".menu nav ul").style.display = 'none';
+                } else {
+                    document.querySelector(".menu nav ul").style.display = 'flex';
+                }
+            });
+        };    
+    </script>
+</head>
+<body>
+   <header>
+        <div class="header">
+            <div class="logo">
+                <img src="assets/img/popcornLogo.png">
+                <h4>Popfilm</h4>
+            </div>
+            <div class="menu">
+                <nav>
+                    <div class="menu_mobile">
+                        <div class="mn_line"></div>
+                        <div class="mn_line"></div>
+                        <div class="mn_line"></div>
+                    </div>
+                    <ul>
+                        <li><a href="">Action</a></li>
+                        <li><a href="">Romance</a></li>
+                        <li><a href="">Horror</a></li>
+                        <li><a href="">Fantasy</a></li>
+                        <li><a href="">Thriller</a></li>
+                        <li><a href="">Musical</a></li>
+                        <li><a href="">Comedy</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+   </header>
+    <main>
+
+        <section class="area_principal">
+            <div class="bloco">
+                <div class="conteudo">
+                    <div id="Mtitle"></div>
+                    <img id="img1" src="">
+                    <div id="author"></div>
+                    <div id="text"></div>
+                    <div id="hod"></div>
+                </div>
+            </div>
+
+            <div class="botoes">
+                <div class="botao">
+                    <a id="tweet-quote" href="">Twitter</a>
+                </div>
+                <div class="botao">
+                    <a id="new-quote" href="">New</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="stream">
+            <div class="icones">
+                <div class="icone">
+                    <img src="assets/img/disney.png">
+                </div>
+                <div class="icone">
+                    <img src="assets/img/netflix.png">
+                </div>
+                <div class="icone">
+                    <img src="assets/img/hbomax.png">
+                </div>
+                <div class="icone">
+                    <img src="assets/img/primevideo.png">
+                </div>
+                <div class="icone">
+                    <img src="assets/img/globoplay.png">
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
