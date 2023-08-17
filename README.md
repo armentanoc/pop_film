@@ -7,6 +7,8 @@
 
 <p>Este é um projeto de apresentação de Front End exclusivamente com HTML e CSS, utilizando e consumindo uma API via JavaScript para selecionar aleatoriamente filmes a serem assistidos a partir de sua nota no IMDB, descrição, foto e diretor, retornando essas informações em tela.</p>
 
+![Captura de tela de 2023-08-16 21-43-55](https://github.com/armentc/pop_film/assets/69776190/e862e826-763c-422a-941d-e529bcc11dd6)
+
 <h2>Setup</h2>
 <p>
 Antes de começar, assegure-se que:
