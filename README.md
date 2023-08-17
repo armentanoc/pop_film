@@ -3,7 +3,7 @@
 <a href='https://www.devmedia.com.br/o-que-e-o-html5/25820' target="_blank"><img alt='HTML5' src='https://img.shields.io/badge/HTML5-100000?style=plastic&logo=HTML5&logoColor=white&labelColor=e54d26&color=black'/></a>
 <a href='https://developer.mozilla.org/pt-BR/docs/Web/CSS' target="_blank"><img alt='CSS3' src='https://img.shields.io/badge/CSS3-100000?style=plastic&logo=CSS3&logoColor=white&labelColor=0096db&color=black'/></a>
 <a href='https://developer.mozilla.org/pt-BR/docs/Web/JavaScript' target="_blank"><img alt='javascript' src='https://img.shields.io/badge/JavaScript-100000?style=plastic&logo=javascript&logoColor=white&labelColor=f7df1d&color=black'/></a>
-<a href='https://code.visualstudio.com/docs' target="_blank"><img alt='visual studio code' src='https://img.shields.io/badge/VSCode-100000?style=plastic&logo=visual studio code&logoColor=white&labelColor=555555&color=007ACC'/></a>
+<a href='https://vscode.dev/' target="_blank"><img alt='visual studio code' src='https://img.shields.io/badge/VSCode-100000?style=plastic&logo=visual studio code&logoColor=white&labelColor=25abf2&color=black'/></a>
 
 <p>Este é um projeto de apresentação de Front End exclusivamente com HTML e CSS, utilizando e consumindo uma API via JavaScript para selecionar aleatoriamente filmes a serem assistidos a partir de sua nota no IMDB, descrição, foto e diretor, retornando essas informações em tela.</p>
 
