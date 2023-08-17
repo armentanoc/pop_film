@@ -23,4 +23,4 @@ Antes de começar, assegure-se que:
 
 2) Automaticamente, uma primeira sugestão será exibida
 
-3) Para uma nova sugestão, interaja com o CTA em tela
+3) Para uma nova sugestão, interaja com o CTA em tela clicando em `New`
