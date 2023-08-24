@@ -7,7 +7,7 @@
 
 <p>Este é um projeto de apresentação de Front End exclusivamente com HTML e CSS, utilizando e consumindo uma API via JavaScript para selecionar aleatoriamente filmes a serem assistidos a partir de sua nota no IMDB, descrição, foto e diretor, retornando essas informações em tela.</p>
 
-![Captura de tela de 2023-08-16 21-43-55](https://github.com/armentc/pop_film/assets/69776190/e862e826-763c-422a-941d-e529bcc11dd6)
+![utilizando_popfilm](https://github.com/armentc/pop_film/assets/69776190/0ec8d5bc-7380-42b1-95f8-53807b51f4db)
 
 <h2>Setup</h2>
 <p>
@@ -15,7 +15,7 @@ Antes de começar, assegure-se que:
 <p>
 
 * Os arquivos estão salvos na mesma pasta
-* Para traduzir, o script do Google Tradutor esteja aparecendo corretamente na página
+* Para traduzir, o script do Google Tradutor precisa estar aparecendo corretamente na página
 
 <h2>Acessando o projeto</h2>
 
@@ -24,3 +24,7 @@ Antes de começar, assegure-se que:
 2) Automaticamente, uma primeira sugestão será exibida
 
 3) Para uma nova sugestão, interaja com o CTA em tela clicando em `New`
+
+4) Se desejar, pode compartilhar a indicação no Twitter (X)
+
+5) É possível traduzir o conteúdo da página com o Script do Google Tradutor que aparece abaixo do Metascore. 
