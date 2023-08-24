@@ -12,105 +12,116 @@ var arrayL =["Blade", "X-Men", "Blade II", "Spider-Man", "Daredevil", "X2: X-Men
              "Starwars: Rogue-one","Star Wars: The Force Awakens","Star Wars: The Last Jedi","Star Wars: The Last Jedi",
             "Toy story 4","X-Men: Apocalypse"];
 
-function getfilm() {
-
-    var min = 0;
-    var max = arrayL.length - 1;
-    return arrayL[Math.floor(Math.random() * (max - min + 1)) + min];
-}
-
-
-
 $(document).ready(function () {
+
+    $(".menu_mobile").click(function () {
+        // Toggle the visibility of the navigation items
+        $(".menu nav ul").toggleClass("show-menu");
+    });
+
+   // Close the navigation when clicking outside the ul
+    $(document).on("click", function (event) {
+        if (!$(event.target).closest(".menu_mobile").length) {
+            $(".menu nav ul").removeClass("show-menu");
+        }
+    });
+
+    function getfilm() {
+        var min = 0;
+        var max = arrayL.length - 1;
+        return arrayL[Math.floor(Math.random() * (max - min + 1)) + min];
+    }
+
     $.get(MovieSales, function makeMyMap(data) {
-              data.children.forEach((d) => {
+        data.children.forEach((d) => {
             d.children.forEach(element => {
                 if (element.hasOwnProperty('name')) {
                     if (!arrayL.includes(element.name)) {
                         arrayL.push(element.name);
-                                           }
+                    }
                 }
             });
         });
-   
+        g();
+    });
 
-    g();
- });
     function g() {
+        // Show the placeholder and hide other content
+        $(".placeholder").css("display", "flex");
+        $("#Mtitle, #img1, #text, #author, #hod").css("visibility", "hidden");
+
         var j = getfilm();
-       
-        $("#Mtitle").text(j + "\n");
-        $.get(
-            "https://www.omdbapi.com/?t=" + j + "&apikey=e639b4e1",
-            function (data) {
-                console.log(data);
+
+        $.get("https://www.omdbapi.com/?t=" + j + "&apikey=e639b4e1", function (data) {
+            console.log(data);
+
+            var img = new Image();
+            img.onload = function () {
+                $("#img1").attr("src", data.Poster);
                 $("#text").text(data.Plot);
                 $("#author").text(data.Director);
+
                 var mscore = data.Metascore;
-                $("#img1").attr("src", data.Poster);
                 if (!isNaN(mscore)) {
-                    $("#hod").text("Metascore: " + "\n" + mscore + "%");
+                    $("#hod").text("Metascore: " + mscore + "%");
                     if (mscore < 30) {
-                        $("#hod").css("color", "white");
+                        $("#hod").css("color", "red");
                     } else if (mscore < 60) {
-                        $("#hod").css("color", "white");
-                    } else if (mscore > 60) {
-                        $("#hod").css("color", "white");
+                        $("#hod").css("color", "yellow");
+                    } else {
+                        $("#hod").css("color", "green");
                     }
                 }
-                $("#tweet-quote").attr("href", "https://twitter.com/intent/tweet?text="+data.Plot+"&url=https://codepen.io/vanderdrilu/full/pVeXgw");  
-            });
-      
-  
-     
-    }
 
+                $("#tweet-quote").attr("href", "https://twitter.com/intent/tweet?text=" + data.Plot + "&url=https://github.com/armentc/pop_film");
+
+                // Show the content and hide the placeholder once everything is ready
+                $(".placeholder").css("display", "none");
+                $("#Mtitle, #img1, #text, #author, #hod, #tweet-quote").css("visibility", "visible");
+            };
+            img.src = data.Poster;
+
+            // Set the Mtitle after fetching movie data
+            $("#Mtitle").text(j + "\n");
+        });
+    }
 
     $("#new-quote").click(function () {
         g();
-
     });
 
-});
+    // API Translation
 
-//API de tradução
+    const text = document.getElementById("quote-box").innerHTML;
+    const btnTranslate = document.querySelector("#btnTranslate");
 
-const text = document.getElementById("quote-box").innerHTML;
-const btnTranslate = document.querySelector("#btnTranslate");
-
-
-btnTranslate.addEventListener("click", () => {
-    loadTranslation();
-});
-
-function loadTranslation() {
-  fetch(
-    `https://api.mymemory.translated.net/get?q=${text.innerText}&langpair=en-gb|pt-br`
-  )
-    .then((res) => res.json())
-    .then((data) => {
-      text.value = data.responseData.translatedText;
+    btnTranslate.addEventListener("click", () => {
+        loadTranslation();
     });
-}
 
-/*
-const btnTranslatePortuguese = document.querySelector("#btn-translate_pt-br")
-const textareaFrom = document.getElementById("#quote-box")
-const textareaTo = document.querySelector("#translation-test")
+    function loadTranslation() {
+        fetch(`https://api.mymemory.translated.net/get?q=${text.innerText}&langpair=en-gb|pt-br`)
+            .then((res) => res.json())
+            .then((data) => {
+                text.value = data.responseData.translatedText;
+            });
+    }
 
-btnTranslatePortuguese.addEventListener("click", () => {
-    if (textareaFrom.value) {
-    loadTranslation();
-  }
-});
+    const btnTranslatePortuguese = document.querySelector("#btn-translate_pt-br");
+    const textareaFrom = document.getElementById("quote-box");
+    const textareaTo = document.querySelector("#translation-test");
 
-function loadTranslation() {
-fetch(
-    `https://api.mymemory.translated.net/get?q=${textareaFrom.value}&langpair=EN-GB|PT-BR`
-  )
-    .then((res) => res.json())
-    .then((data) => {
-      textareaTo.value = data.responseData.translatedText;
+    btnTranslatePortuguese.addEventListener("click", () => {
+        if (textareaFrom.value) {
+            loadTranslationPortuguese();
+        }
     });
-}
-*/
+
+    function loadTranslationPortuguese() {
+        fetch(`https://api.mymemory.translated.net/get?q=${textareaFrom.value}&langpair=EN-GB|PT-BR`)
+            .then((res) => res.json())
+            .then((data) => {
+                textareaTo.value = data.responseData.translatedText;
+            });
+    }
+});
