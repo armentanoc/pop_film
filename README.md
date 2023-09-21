@@ -1,9 +1,9 @@
 <h1 align="left"> Popfilm, random movie suggestions popping up 🍿</h1>
 
-<a href='https://www.devmedia.com.br/o-que-e-o-html5/25820' target="_blank"><img alt='HTML5' src='https://img.shields.io/badge/HTML5-100000?style=plastic&logo=HTML5&logoColor=white&labelColor=e54d26&color=black'/></a>
-<a href='https://developer.mozilla.org/pt-BR/docs/Web/CSS' target="_blank"><img alt='CSS3' src='https://img.shields.io/badge/CSS3-100000?style=plastic&logo=CSS3&logoColor=white&labelColor=0096db&color=black'/></a>
-<a href='https://developer.mozilla.org/pt-BR/docs/Web/JavaScript' target="_blank"><img alt='javascript' src='https://img.shields.io/badge/JavaScript-100000?style=plastic&logo=javascript&logoColor=white&labelColor=f7df1d&color=black'/></a>
-<a href='https://vscode.dev/' target="_blank"><img alt='visual studio code' src='https://img.shields.io/badge/VSCode-100000?style=plastic&logo=visual studio code&logoColor=white&labelColor=25abf2&color=black'/></a>
+![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=modern&logo=HTML5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?style=modern&logo=CSS3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=modern&logo=JavaScript&logoColor=%23F7DF1E)
+![VisualStudioCode](https://img.shields.io/badge/Visual%20Studio%20Code-0078d4.svg?style=modern&logo=VisualStudioCode&logoColor=white)
 
 <p>Este é um projeto de apresentação de Front End que utiliza HTML, CSS e JavaScript, consumindo uma API para selecionar aleatoriamente filmes a serem assistidos, assim como a sua respectiva nota no IMDB, descrição, poster e diretor, retornando essas informações em tela.</p>
 
